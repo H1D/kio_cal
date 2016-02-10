@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+
+{% block content %}
+<div id="calendar">
+    {% if release %}
+        <div id="releases">
+            <div class="release-wr release-title prev">
+                {% if release.before.0 %}
+                    <a href="{{ release.before.0.get_absolute_url }}" title="Просмотреть выпуск за {{ release.before.0.title|capfirst }}">{{ release.before.0.title }}</a>
+                {% endif %}
+            </div>
+            <div class="release-wr release-title active">
+                {{ release.title|capfirst }}
+            </div>
+            <div class="release-wr release-title next">
+    {#            <a class="rss" href="{% url rss_feed %}" title="RSS подписка на все статьи КИО календаря">#}
+    {#                <img src="{{ STATIC_URL }}img/rss.png" height="18px" width="18px" alt="RSS"/>#}
+    {#            </a>#}
+                {% if release.after.0 %}
+                    <a href="{{ release.after.0.get_absolute_url }}" title="Просмотреть выпуск за {{ release.after.0.title|capfirst }}">{{ release.after.0.title }}</a>
+                {% endif %}
+            </div>
+            <div class="clear-both"></div>
+        </div>
+
+        <div id="articles">
+            {% for article in release.articles_ordered %}
+                <div class="article-wr">
+                    <h2 class="rubric">
+                        {{ article.rubric }}
+                    </h2>
+                    <div class="article">
+                        <h3 class="article-title">
+                            <a title="Читать целиком" href="{% url article_full article.pk %}">
+                                {{ article.title }}
+                            </a>
+                        </h3>
+                        <a title="Читать целиком" href="{% url article_full article.pk %}">
+                            {% thumbnail article.main_image '100x140' crop="center" as image %}
+                                  <img class="article-thumb" src="{{image.url}}" title="{{article.title}}" alt="{{article.title}}" width="{{ image.width }}px" height="{{ image.height }}px" />
+                            {% endthumbnail %}
+                            <div class="article-annotation">
+                                {{ article.body|removetags:'img IMG'|truncatewords_html:35|safe }}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% cycle '' '' '<div class="clear-both"></div>' %}
+                {% if forloop.last %}
+                    <div class="clear-both"></div>
+                {% endif %}
+            {% empty %}
+                <h4>Выпуск не имеет статей</h4>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h4>Ведутся работы, доступ к публикациям временно закрыт.</h4>
+    {% endif %}
+</div>
+{% endblock %}

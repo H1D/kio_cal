@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Marck+Script&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    {% block css %}
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css?v4" />
+    {% endblock css %}
+    {% block js %}{% endblock js %}
+    {% block extrahead %}
+      <link rel="shortcut icon" href="{{ STATIC_URL }}/img/favicon.ico" />
+    {% endblock %}
+    <title>{% block title %}КИО календарь {% block extratitle %}{% endblock %}{% endblock %}</title>
+    {% block extrahead_end %}{% endblock %}
+    <link title="" type="application/rss+xml" rel="alternate" href="{% url rss_feed %}"/>
+  </head>
+
+  <body>
+
+  <div id="top_bar">
+      <div class="part" style="background-color: #E4972D;">
+          <div class="proj_big">
+              <a href="http://ipo.spb.ru/poka-chto.php" class="big">Главная</a>
+          </div>
+      </div>
+
+      <div class="part" style="background-color: #E66E41;">
+          <div class="proj_big">
+              <a href="http://ipo.spb.ru/kio/" class="big">КИО</a>
+          </div>
+      </div>
+
+      <div class="part" style="background-color: #A6402E;">
+          <div class="proj_big">
+              <a href="http://www.ipo.spb.ru/journal/" class="big">Журналы</a>
+          </div>
+      </div>
+
+      <div class="part" style="background-color: #2bd8ec;">
+          <div class="proj_big">
+              <a href="/" class="big">Календарь</a>
+          </div>
+      </div>
+
+      <div id="login_div">
+         <form id="login_form">
+             Email: <input/> Пароль: <input/>
+             <a href="#" onclick="alert('Не реализовано')">Войти</a>
+             <a href="#" onclick="alert('Не реализовано')">Регистрация</a>
+         </form>
+      </div>
+      <div class="clear-both"></div>
+  </div>
+</div>
+
+    {% block content %}
+
+    {% endblock %}
+  </body>
+</html>

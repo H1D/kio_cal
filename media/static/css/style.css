@@ -1,0 +1,255 @@
+body
+{
+    font: "Times New Roman", serif;
+    /*word-spacing: 0.1em;*/
+    font-size: 33px;
+    background-color:#CCCCCC;
+    padding: 0;
+    margin: 0;
+}
+
+#calendar
+{
+    padding:0;
+    margin: 0 auto;
+    display: block;
+    width:940px;
+    background-color: #FFFFFF;
+}
+
+#releases
+{
+    padding: 0;
+    background: #E6E6E6 url('/media/static/img/bkg-t.png') repeat-x;
+    background-position-y: 3px;
+}
+
+.release-wr
+{
+    float:left;
+    width: 33.33%;
+    margin: 0;
+}
+
+.release-title
+{
+    background: #E6E6E6 url('/media/static/img/bkg-t.png') repeat-x;
+    background-position-y: 3px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.release-title a
+{
+    text-decoration:none;
+    color:inherit;
+}
+
+.release-title:hover
+{
+    background: #EFEFEF url('/media/static/img/bkg-t.png') repeat-x;
+    background-position-y: 6px;
+}
+.release-title:hover a
+{
+    text-decoration:underline;
+}
+
+.release-title.active
+{
+    background-color: #FFFFFF;
+    background-image: none;
+}
+
+.release-title.active a
+{
+    text-decoration:underline !important;
+}
+
+#caltable tr
+{
+    vertical-align: top;
+}
+
+.release-title.current
+{
+    font-weight: bold;
+}
+
+.article
+{
+    position: relative;
+    padding: 0 0.5em 0.5em 0.5em;
+    overflow-y:hidden;
+    background-color: #FFEE8C;
+    margin: 0;
+}
+
+.article a {
+    text-decoration: none;
+    color:inherit;
+}
+
+.article h3 {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    line-height: 33px;
+}
+.article h3 a{
+    text-decoration: underline;
+    color:inherit;
+}
+
+.article-annotation
+{
+    /*высота картинки*/
+    height: 12em;
+    overflow-y:hidden;
+}
+
+.article-annotation:first-letter
+{
+    font-size: 52px;
+    float: left;
+    font-weight: 400;
+    line-height: 36px;
+    margin-right: 0.09em;
+    position: relative;
+}
+
+.article-thumb
+{
+    margin-right: 0.9em;
+    float:left;
+}
+
+.article-annotation
+{
+    font-size: 12px;
+}
+
+.rubric,.registration-title
+{
+    background-color:#FFE23B;
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 33px;
+}
+
+#top_bar a
+{
+    color:white;
+}
+
+#top_bar {
+    background-color: #852572;
+    width: 940px;
+    height: 33px;
+    margin: 0 auto 33px auto;
+}
+
+#top_bar .part {
+    float: left;
+    padding: 0;
+    text-align: center;
+    width: 11%;
+    font-size: 18px;
+    height: 33px;
+    border-right: 1px white solid;
+}
+
+
+.proj_big a,#login_div a {
+    line-height: 33px;
+}
+    
+#login_div {
+    background-color: #852572;
+    height: 33px;
+    color: white;
+    font-size: 12px;
+    display: inline;;
+    padding: 0 0 0 3px;
+}
+
+.rss
+{
+    float: right;
+    border: 0;
+    text-decoration: none;
+    position:relative;
+    top: -8px;
+    right: -8px;
+}
+
+.clear-both
+{
+    clear:both;
+}
+
+a.morelink
+{
+    position: absolute;
+    right: 0.3em;
+    bottom: 0.1em;
+}
+
+.article-wr
+{
+    float:left;
+    width: 31.5%;
+    margin:.25em;
+}
+
+#articles
+{
+    padding: .25em;
+}
+
+.rubric h2, .release-wr
+{
+    line-height: 33px;
+}
+
+/*REGISTRTATION*/
+.registration-wr
+{
+    padding:0;
+    margin: 0 auto;
+    display: block;
+    width:500px;
+    background-color: #FFEE8C;
+}
+.registration-form
+{
+    font-size: 14px;
+    padding: 1.1em;
+}
+.registration-form label
+{
+    width: 170px;
+    display:inline-block;
+}
+.registration-form ul, registration-form li
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.registration-form ul.errorlist
+{
+    background-color: #ff6666;
+    font-weight:bold;
+    padding: .1em;
+}
+
+.registration-form p.errors
+{
+    background-color: #F99;
+}

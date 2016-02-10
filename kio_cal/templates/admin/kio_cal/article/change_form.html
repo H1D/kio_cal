@@ -1,0 +1,30 @@
+{% extends "admin/kio_cal/change_form.html" %}
+{% load i18n %}
+
+{% block extrahead %}{{ block.super }}
+<script src="/media/js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.move_to_authors').insertBefore('.form-row.authors>div>p.help');
+    });
+
+    function send_invitation() {
+        var email = prompt('Введите email:');
+        $.post('{% url invitation_invite_author %}',
+                {email:email,article_pk:'{{ object_id }}'},
+                function (data) {
+                    if (data.ok) {
+                        alert('Приглашение отправлено');
+                    } else {
+                        alert('Произошла ошибка при отправке приглашения');
+                    }
+                });
+    };
+</script>
+{% endblock extrahead %}
+
+{% block after_field_sets %}{{ block.super }}
+    <input value="{% trans "Пригласить по email" %}"
+     onclick="send_invitation()"
+     class="move_to_authors enable_after_save" type="button"/>
+{% endblock after_field_sets %}
