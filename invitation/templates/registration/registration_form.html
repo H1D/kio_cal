@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block extratitle %}| регистрация{% endblock %}
+
+{% block content %}
+    <div class="registration-wr">
+        <h2 class="registration-title">
+            Регистрация
+        </h2>
+        <form action="." method="post" class="registration-form">{% csrf_token %}
+            {{ form.as_p }}
+            <p class="submit"><button type="submit">Зарегистрироваться</button></p>
+          </form>
+    </div>
+
+{% endblock %}

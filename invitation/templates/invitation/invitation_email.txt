@@ -1,0 +1,4 @@
+Здравствуйте!
+
+Вас пригласили быть соавтором статьи "{{ invitation.article }}"!
+Чтобы принять приглашение пройдите по ссылке: http://{{ site.domain }}{{ invitation.get_absolute_url }}
