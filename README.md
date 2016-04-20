@@ -4,6 +4,7 @@ Strongly recommend to use linux for development
 
 checkout project, and make sure the folder name with the project is not `kio_cal` (see http://stackoverflow.com/a/6949892/1826120)
 
+1. copy or move the file `settings.py.example` to `settings.py`. Fix settings concerning: database, email, secret key
 1. install `python` and `pip`
 1. run `pip install -r REQUIREMENTS.txt`
 1. run `./manage.py syncdb --all` and create superuser when suggested
